@@ -14,7 +14,7 @@ Cool right? Yeah...probably not but at least you'll be able to see a bunch of en
 https://developers.giphy.com/explorer?
 
 ## ERDs:
--check out my .drawio file !!
+![ERDs](./imgs/ERDs.png)
 
 
 ## RESTful routes
