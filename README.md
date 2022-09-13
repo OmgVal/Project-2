@@ -2,7 +2,7 @@
 
 Picture this, if "we heart it" and "giphy" had a baby. A place where you could just go and like as many gifs as you wanted. A sea of gifs. YOUR sea of gifs. 
 
-![Sea](https://media.giphy.com/media/JRgjhKV4UvgCpcue0q/giphy-downsized-large.gif)
+![DancingBeach](https://media.giphy.com/media/JRgjhKV4UvgCpcue0q/giphy-downsized-large.gif)
 
 Now.. realistically you wouldnt make the sea to have "fun" but to pass time. You can favorite gifs and they will all be easily accessed via your profile.  
 
