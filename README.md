@@ -20,13 +20,13 @@ https://developers.giphy.com/explorer?
 ## RESTful routes
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
-| GET | `/gif` | home page that lists trending gifs |
-| GET | `/gif/search` | list gifs with tag user searched|
-| POST | `/gif/:id` | details of specific gif will allow user to post a comment |
-| POST | `/gif/:id` | user can add gif to their faves in gif details|
-| GET | `/gif/:id` | shows specific gifs details |
-| GET | `/user/faves` | shows list of all fave gifs for user |
-| DELETE | `/user/faves/:id` | allows user to remove specific gif from faves |
+| GET | `/gifs` | home page that lists trending gifs |
+| GET | `/gifs/search` | list gifs with tag user searched|
+| POST | `/gifs/:id` | details of specific gif will allow user to post a comment |
+| POST | `/gifs/:id` | user can add gif to their faves in gif details|
+| GET | `/gifs/:id` | shows specific gifs details |
+| GET | `/user/profile` | shows list of all fave gifs for user |
+| DELETE | `/gifs/:id` | allows user to undone thir favorites which will remove gif from their faves list |
 
 
 
@@ -36,8 +36,21 @@ https://developers.giphy.com/explorer?
 
 ![User-Details](./imgs/Untitled_Artwork%2032.png)
 
+
 ## UserStory
-- As a user you'll be able to "heart" all of the gifs you enjoy and have them saved to you user profile so you can enjoy them whenever you want and not use them. Gifs are a great form of expression. Best used while texting your friends. Best part about this website is that you have easy access to them and not worry about having to find them again.
+- As a non-user i will have access to gifs library
+- As a non-user i view gif details/comments
+- As a non-user i will NOT be able to "like" gifs
+- As a non-user i will NOT have the ability to leave any comments
+- As a non-user i will NOT have a profile
+- As a non-user i will be able create an account
+
+- As a User i will have access to the gif library
+- As a User i will be able to view gif details/comments
+- As a User i will be able to like gifs
+- As a User i will be able to leave a comment on gifs
+- As a User i will be able to login/view my profile
+
 
 ## MVP Goals
 1. Make homepage display gifs

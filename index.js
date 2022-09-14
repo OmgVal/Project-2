@@ -5,6 +5,7 @@ const ejsLayouts = require('express-ejs-layouts')
 const cookieParser = require('cookie-parser')
 const db = require('./models')
 const crypto = require('crypto-js')
+const axios = require('axios')
 
 console.log('server secret:', process.env.ENC_SECRET)
 
@@ -38,12 +39,22 @@ app.use(async (req, res, next) => {
 
 
 // route definitions
+// app.get('/', (req, res) => {
+//     // console.log('incoming cookie 🍪', req.cookies)
+//     // console.log(res.locals.myData)
+//     res.render('home.ejs')
+// })
+
 app.get('/', (req, res) => {
-    // console.log('incoming cookie 🍪', req.cookies)
-    // console.log(res.locals.myData)
-    console.log('the currently logged in user is:', res.locals.user)
-    res.render('home.ejs')
-})
+    axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=${process.env.API_KEY}&limit=18&rating=g`)
+    //`http://www.omdbapi.com/?s=${req.query.movieSearch}&apikey=${process.env.OMDB_API_KEY}`
+    .then(response => {
+        response.data.data.forEach(item => {console.log(item.images.original.url)})
+        res.render('home.ejs', { gifs: response.data.data })
+        console.log('the currently logged in user is:', res.locals.user)
+    })
+      .catch(console.log)
+  })
 
 // Controllers
 app.use('/users', require('./controllers/users'))

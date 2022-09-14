@@ -4,3 +4,38 @@ Email: VARCHAR 255 (string)
 password: VARCHAR 255 (string)
 
 sequelize model:create --name user --attributes email:string,password:string
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+LIKE TABLE
+-----------
+gifId: INTEGER
+userId: INTEGER
+
+sequelize model:create --name like --attributes gifId:integer,userId:integer
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+GIF TABLE
+---------
+title: STRING
+url: STRING
+
+sequelize model:create --name gif --attributes title:string,url:string
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+COMMENT TABLE
+-------------
+gifId: INTEGER
+userId: INTEGER
+name: STRING
+content: TEXT
+
+sequelize model:create --name comment --attributes gifId:integer,userId:integer,name:string,content:text
+
+
+
