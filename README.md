@@ -20,10 +20,12 @@ https://developers.giphy.com/explorer?
 ## RESTful routes
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
-| GET | `/gifs` | home page that lists trending gifs |
+| GET | `/` | home page that lists trending gifs |
 | GET | `/gifs/search` | list gifs with tag user searched|
 | POST | `/gifs/:id` | details of specific gif will allow user to post a comment |
 | POST | `/gifs/:id` | user can add gif to their faves in gif details|
+| GET | `/gifs/:id` | shows specific gifs details |
+| PUT | `/user/profile` | user will be able to update their username |
 | GET | `/gifs/:id` | shows specific gifs details |
 | GET | `/user/profile` | shows list of all fave gifs for user |
 | DELETE | `/gifs/:id` | allows user to undone thir favorites which will remove gif from their faves list |
