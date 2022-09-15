@@ -1,0 +1,16 @@
+<h1><%=  gif.title %></h1>
+<a href="<%=  gif.url %>">source</a>
+
+
+<img src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/>
+
+<form method="POST" action="/gifs/like">
+    <input hidden value="<%= gif.title %>" name="title" />
+    <input hidden value="<%= gif.id %>" name="gifid" />
+    <button type="submit">like</button>
+</form>
+
+
+
+
+
