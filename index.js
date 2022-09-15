@@ -47,7 +47,6 @@ app.use(async (req, res, next) => {
 
 app.get('/', (req, res) => {
     axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=${process.env.API_KEY}&limit=18&rating=g`)
-    //`http://www.omdbapi.com/?s=${req.query.movieSearch}&apikey=${process.env.OMDB_API_KEY}`
     .then(response => {
         response.data.data.forEach(item => {console.log(item.images.original.url)})
         res.render('home.ejs', { gifs: response.data.data })
@@ -58,6 +57,7 @@ app.get('/', (req, res) => {
 
 // Controllers
 app.use('/users', require('./controllers/users'))
+app.use('/gifs', require('./controllers/gifs'))
 
 // listen on a port
 app.listen(PORT, () => console.log(`you or your loved ones may be entitled to compensation on port: ${PORT}`))

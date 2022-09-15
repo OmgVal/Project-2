@@ -1,6 +1,12 @@
 <h2> welcome home!</h2>
-<% gifs.forEach(gif => { %>
-    <% if (gif.images.original.url != " ") { %>
-      <img  src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/> 
-    <% } %>
-  <% }) %>
+
+
+
+<div>
+    <% gifs.forEach(gif => { %>
+        <% if (gif.images.original.url != " ") { %>
+        <img  src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/> 
+        <% } %>
+    <% }) %>
+</div>
+
