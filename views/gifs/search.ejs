@@ -1,0 +1,16 @@
+<h3>Search for Gifs:</h3>
+
+<form method="GET" action="/gifs/">
+    <lable for="search"></lable>
+    <input type="text"  id="search" name="gifSearch" />
+  
+    <input type="submit" />
+  </form>
+
+    <div>
+        <% gifs.forEach(gif => { %>
+            <% if (gif.images.original.url != " ") { %>
+            <img  src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/> 
+            <% } %>
+        <% }) %>
+    </div>
