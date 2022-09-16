@@ -26,7 +26,6 @@ https://developers.giphy.com/explorer?
 | POST | `/gifs/:id` | user can add gif to their faves in gif details|
 | GET | `/gifs/:id` | shows specific gifs details |
 | PUT | `/user/profile` | user will be able to update their username |
-| GET | `/gifs/:id` | shows specific gifs details |
 | GET | `/user/profile` | shows list of all fave gifs for user |
 | DELETE | `/gifs/:id` | allows user to undone thir favorites which will remove gif from their faves list |
 

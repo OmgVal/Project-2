@@ -108,4 +108,25 @@ router.get('/profile', (req, res) => {
     }
 })
 
+router.post('/like', async (req, res) => {
+    try {
+        if(!res.locals.user) {
+            res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
+        } else {
+            console.log(req.body)
+            await db.gifs.findOrCreate({
+                where: { url: req.params.like }
+            }).then( ([gif, wasCreated]) => {
+                console.log(gif)
+                res.redirect('/coins')
+            })
+        }
+    } catch (err){
+      console.log(err)
+      res.send('server error')
+    }
+  })
+
+
+
 module.exports = router

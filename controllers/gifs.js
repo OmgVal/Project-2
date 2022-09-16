@@ -26,9 +26,6 @@ router.get('/details/:id', (req, res) => {
       .catch(console.log)
   })
 
-router.post('/like', (req, res) => {
-    res.send('liked')
-})
 
 
 

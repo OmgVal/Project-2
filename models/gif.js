@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.gif.belongsToMany(models.user, {through: "like"})
+      models.gif.belongsToMany(models.user, {through: "comment"})
     }
   }
   gif.init({
