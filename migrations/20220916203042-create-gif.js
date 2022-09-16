@@ -11,7 +11,7 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
-      url: {
+      giphyId: {
         type: Sequelize.STRING
       },
       createdAt: {

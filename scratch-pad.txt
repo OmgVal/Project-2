@@ -3,7 +3,7 @@ USER MODEL
 Email: VARCHAR 255 (string)
 password: VARCHAR 255 (string)
 
-sequelize model:create --name user --attributes email:string,password:string
+sequelize model:create --name user --attributes email:string,password:string,username:string
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
@@ -21,9 +21,12 @@ sequelize model:create --name like --attributes gifId:integer,userId:integer
 GIF TABLE
 ---------
 title: STRING
-url: STRING
+giphyId: STRING
 
-sequelize model:create --name gif --attributes title:string,url:string
+sequelize model:create --name gif --attributes title:string,giphyId:string
+
+models.gif.belongsToMany(models.user, {through: "likes"})
+      models.gif.hasMany(models.comment)
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------

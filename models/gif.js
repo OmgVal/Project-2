@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.gif.belongsToMany(models.user, {through: "like"})
-      models.gif.belongsToMany(models.user, {through: "comment"})
+      models.gif.belongsToMany(models.user, {through: "likes"})
+      models.gif.hasMany(models.comment)
     }
   }
   gif.init({
     title: DataTypes.STRING,
-    url: DataTypes.STRING
+    giphyId: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'gif',

@@ -17,7 +17,8 @@ router.post('/', async (req, res) => {
         // create a new user
         const [newUser, created] = await db.user.findOrCreate({
             where: {
-                email: req.body.email
+                email: req.body.email,
+                username: req.body.username
             }, 
             defaults: {
                 password: hashedPassword
@@ -108,24 +109,28 @@ router.get('/profile', (req, res) => {
     }
 })
 
-router.post('/like', async (req, res) => {
-    try {
-        if(!res.locals.user) {
-            res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
-        } else {
-            console.log(req.body)
-            await db.gifs.findOrCreate({
-                where: { url: req.params.like }
-            }).then( ([gif, wasCreated]) => {
-                console.log(gif)
-                res.redirect('/coins')
-            })
-        }
-    } catch (err){
-      console.log(err)
-      res.send('server error')
-    }
-  })
+// router.post('/like', (req, res) => {
+//         if(!res.locals.user) {
+//             res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
+//             } else {
+//                 db.gif.findOrCreate({
+//                     // console.log({user: req.user.username})
+//                 where: { 
+//                     title: req.body.title
+//                  }
+//                 }).then(([gif, created]) => {
+//                 // Second, get a reference to a toy.
+//                     db.like.findOrCreate({
+//                         where: { gifId: req.gif.giphyId}
+//                     }).then(([like, created]) => {
+//                         // Finally, use the "addModel" method to attach one model to another model.
+//                         gif.addLike(like).then(relationInfo => {
+//                         console.log(`${gif.title} added to ${like.userId}.`)
+//                         })
+//                     })
+//                 })
+//             }
+// })
 
 
 
