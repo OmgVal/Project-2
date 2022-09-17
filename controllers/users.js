@@ -3,6 +3,7 @@ const router = express.Router()
 const db = require('../models')
 const crypto = require('crypto-js')
 const bcrypt = require('bcrypt')
+const { default: axios } = require('axios')
 
 // GET /users/new -- render a form to create a new user
 router.get('/new', (req, res) => {
@@ -103,34 +104,46 @@ router.get('/profile', (req, res) => {
         res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
     // otherwise, show them their profile
     } else {
-        res.render('users/profile.ejs', {
-            user: res.locals.user
+        console.log(res.locals.user)
+        const giphyResponses = res.locals.user.gifs.map((gif) => {
+            return axios.get(`https://api.giphy.com/v1/gifs/${gif.giphyId}?api_key=${process.env.API_KEY}`)
+        })
+        console.log(giphyResponses)
+        Promise.all(giphyResponses)
+        .then(giphyData => {
+            console.log(giphyData)
+            const gifs = giphyData.map(responseData => {
+                return responseData.data.data
+            })
+            console.log(gifs)
+            res.render('users/profile.ejs', {
+                user: res.locals.user,
+                gifs: gifs
+            })
         })
     }
 })
 
-// router.post('/like', (req, res) => {
-//         if(!res.locals.user) {
-//             res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
-//             } else {
-//                 db.gif.findOrCreate({
-//                     // console.log({user: req.user.username})
-//                 where: { 
-//                     title: req.body.title
-//                  }
-//                 }).then(([gif, created]) => {
-//                 // Second, get a reference to a toy.
-//                     db.like.findOrCreate({
-//                         where: { gifId: req.gif.giphyId}
-//                     }).then(([like, created]) => {
-//                         // Finally, use the "addModel" method to attach one model to another model.
-//                         gif.addLike(like).then(relationInfo => {
-//                         console.log(`${gif.title} added to ${like.userId}.`)
-//                         })
-//                     })
-//                 })
-//             }
-// })
+router.post('/like', (req, res) => {
+        if(!res.locals.user) {
+            res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
+            } else {
+                db.gif.findOrCreate({
+                    // console.log({user: req.user.username})
+                where: { 
+                    title: req.body.title,
+                    giphyId: req.body.giphyId
+                 }
+
+                }).then(([gif, created]) => {
+                // Second, get a reference to a toy.
+                    gif.addUser(res.locals.user)
+                    .then(() => {
+                        res.redirect(`/gifs/details/${gif.id}`)
+                    })
+                })
+            }
+})
 
 
 
