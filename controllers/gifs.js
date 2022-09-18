@@ -22,12 +22,32 @@ router.get('/details/:id', (req, res) => {
     axios.get(`https://api.giphy.com/v1/gifs/${req.params.id}?api_key=${process.env.API_KEY}`)
       .then(response => {
         res.render('gifs/details', { gif: response.data.data})
+        db.gif.findOne({
+          where: {giphyId: response.data.data.id},
+          include: [db.comment]
+        })
       })
       .catch(console.log)
   })
 
-router.post("/comments", async (req, res) => {
+router.post("/details/:id", async (req, res) => {
   try {
+    if(!res.locals.user) {
+    res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
+    } else {
+        db.gif.findOrCreate({
+        where: { 
+            title: req.body.title,
+            giphyId: req.body.giphyId
+         }
+       }).then(([gif, created]) => {
+        // Second, get a reference to a toy.
+            gif.addComment(gif)
+            .then(() => {
+                res.redirect(`/gifs/details/${gif.id}`)
+            })
+        })
+    }
     // get the data from req.body
     console.log("req dot body", req.body)
     // create a new comment from data ^
@@ -40,11 +60,14 @@ router.post("/comments", async (req, res) => {
       userId: res.locals.user.id
     })
     // 3000/articles/1
-    res.redirect(`/${req.params.id}`)
+    res.redirect(`/${gif.id}`)
   } catch(err) {
     console.log(err)
   }
+  
+
 })
+
 
 
 

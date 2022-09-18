@@ -10,6 +10,27 @@
     <button type="submit">like</button>
 </form>
 
+<form method="POST" action="/users/like/?_method=DELETE" >
+    <input hidden value="<%= gif.title %>" name="title" />
+    <input hidden value="<%= gif.id %>" name="giphyId" />
+    <button type="submit">unlike</button>
+</form>
+
+<% if(gif.comments){ %>
+    <% gif.comments.forEach(comment => { %>
+      <p><%= comment.content %></p>
+      <p> <%= comment.name %></p>
+    <% }) %>
+  <% } %>
+
+<form method="POST" action="/gifs/details/<%= gif.id %>">
+    <label for="name">Your name:</label>
+    <input type="text" name="name">
+    <label for="content">Write your comment here:</label>
+    <input type="text" name="content">
+    <input type="submit">
+  </form>
+
 
 
 

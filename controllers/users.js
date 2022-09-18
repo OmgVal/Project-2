@@ -5,6 +5,8 @@ const crypto = require('crypto-js')
 const bcrypt = require('bcrypt')
 const { default: axios } = require('axios')
 
+
+
 // GET /users/new -- render a form to create a new user
 router.get('/new', (req, res) => {
     res.render('users/new.ejs')
@@ -144,6 +146,45 @@ router.post('/like', (req, res) => {
                 })
             }
 })
+
+router.delete('/like', (req, res) => {
+    if(!res.locals.user) {
+        res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
+        } else {
+            db.like.findOne
+    
+
+            .then(([gif, created]) => {
+            // Second, get a reference to a toy.
+                gif.addUser(res.locals.user)
+                .then(() => {
+                    res.redirect(`/gifs/details/${gif.id}`)
+                })
+            })
+        }
+})
+
+
+router.get('/edit', (req, res) => {
+    console.log(res.locals.user.username)
+    res.render('users/editUsername')
+})
+
+router.put('/edit', async (req, res) => {
+    try {
+        // db.model.update({what to change}, {where: {where clause}})
+        await db.user.update({ username: req.body.username }, {
+            where: {
+                username: res.locals.user.username
+            }
+        })
+        res.redirect('/users/profile')
+ 
+    } catch(err) {
+        console.log(err)
+        res.send('server error')
+    }
+})    
 
 
 
