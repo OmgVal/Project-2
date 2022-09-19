@@ -140,7 +140,7 @@ router.post('/like', (req, res) => {
                 }).then(([gif, created]) => {
                     gif.addUser(res.locals.user)
                     .then(() => {
-                        res.redirect(`/gifs/details/${gif.id}`)
+                        res.redirect(`/gifs/details/${gif.giphyId}`)
                     })
                 })
             }
@@ -150,13 +150,15 @@ router.delete('/like', (req, res) => {
     if(!res.locals.user) {
         res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
         } else {
-            db.like.findOne
-            .then(([gif, created]) => {
-            // Second, get a reference to a toy.
-                gif.addUser(res.locals.user)
-                .then(() => {
-                    res.redirect(`/gifs/details/${gif.id}`)
+            db.gif.findOne()
+            .then(gif => {
+                const likeDeleted = db.like.destroy({
+                    where: {
+                        gifId: gif.id
+                    }
                 })
+                console.log(likeDeleted)
+                res.redirect(`/gifs/details/${gif.giphyId}`)
             })
         }
 })

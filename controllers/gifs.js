@@ -32,7 +32,7 @@ router.get('/details/:id', (req, res) => {
   })
 })
 
-router.post('/details/:id', async (req, res) => {
+router.post('/details/:id/comments', async (req, res) => {
   try {
     if(!res.locals.user) {
     res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
