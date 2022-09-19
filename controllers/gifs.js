@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 const axios = require('axios')
+const { response } = require('express')
 
 //////////////////////////////////////////////////
 //ROUTES
@@ -37,14 +38,21 @@ router.post('/details/:id/comments', async (req, res) => {
     if(!res.locals.user) {
     res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
     } else {
-          const newComment =  await db.comment.create({
+      await db.gif.findOne({
+        where: {
+          giphyId: req.params.id
+      }
+    })
+      .then(gif => {     
+          const newComment = db.comment.create({
             name: req.body.name,
             content: req.body.content,
-            gifId: req.params.id,
+            gifId: gif.id,
             userId: res.locals.user.id
           })
             console.log(newComment)
-            res.redirect(`/gifs/details/${req.params.id}`)
+            res.redirect(`/gifs/details/${gif.giphyId}`)
+      })
     }
   }catch(err) {
     console.log(err)
