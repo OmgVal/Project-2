@@ -10,7 +10,7 @@
     <% gifs.forEach(gif => { %>
     <a href="/gifs/details/<%= gif.id %>">
             <% if (gif.images.original.url != " ") { %>
-            <img  src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/> 
+            <img id="gifImg" src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/> 
             <% } %>
     </a>
     <% }) %>
