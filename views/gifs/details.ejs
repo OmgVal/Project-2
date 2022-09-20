@@ -1,33 +1,33 @@
 <div class="container justify-content-center">
 
-  <div class="container">
+  <div class="container text-center">
     <div>
       <h1><%=  gif.title %></h1>
         <a href="<%=  gif.url %>">source</a>
     </div>
     
     <div class="container">
-      <img src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/>
+      <img src="<%= gif.images.original.url %>" class="rounded mb-10" alt="<%= gif.title %>"/>
       
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <div class="container d-grid gap-2 d-md-flex justify-content-md-end mt-10">
           <form method="POST" action="/users/like">
               <input hidden value="<%= gif.title %>" name="title" />
               <input hidden value="<%= gif.id %>" name="giphyId" />
               <button class="btn btn-secondary me-md-2" type="submit"><i class="fa-solid fa-heart"></i> Like</button>
-              
           </form>
           
           <form method="POST" action="/users/like/?_method=DELETE" >
               <input hidden value="<%= gif.title %>" name="title" />
               <input hidden value="<%= gif.id %>" name="giphyId" />
-              <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-heart-crack"></i> Unlike</button>
-              
+              <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-heart-crack"></i> Unlike</button> 
           </form>
       </div>
       
       <div class="container">
 
-        <div>
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
           <% if(dbGif.comments){ %>
               <% dbGif.comments.forEach(comment => { %>
                 <p> <%= comment.name %></p>
