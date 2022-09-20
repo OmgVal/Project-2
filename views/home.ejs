@@ -1,18 +1,20 @@
-<h2> Trending 🥳</h2>
-
-
-<div class="container text-center">
-    <div class="row">
-        <% gifs.forEach(gif => { %>
-        <div class="col">
-            <a href="/gifs/details/<%= gif.id %>">
-                <% if (gif.images.original.url != " ") { %>
-                <img  src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/> 
-                <% } %>
-            </a>
-        </div>
-        <% }) %>
-    </div>   
+<div class="container">
+    <h2 class="text-center m-5"> Trending 🥳</h2>
+    
+    
+    <div class="d-sm-inline-flex justify-content-center align-self-center p-2">
+        <div class="row">
+            <% gifs.forEach(gif => { %>
+            <div class="col-sm">
+                <a href="/gifs/details/<%= gif.id %>">
+                    <% if (gif.images.original.url != " ") { %>
+                    <img class="rounded mx-auto d-block" src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/> 
+                    <% } %>
+                </a>
+            </div>
+            <% }) %>
+        </div>   
+    </div>
 </div>
   
 
