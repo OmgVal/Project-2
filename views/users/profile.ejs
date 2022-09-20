@@ -1,14 +1,15 @@
 <div class="container">
-    <h1>@<%= user.username %></h1>
 
+    
+
+      <div>
+        <h1><i class="fa-solid fa-user"></i>@<%= user.username %></h1>
+        <a href="/users/edit">Edit Username</a>
+      </div>
 
     <h2> Welcome to your profile!! </h2>
     
     <!-- Add for each loop () -->
-    <div>
-        <a href="/users/edit">Edit Username</a>
-        <a href="/">home</a>
-    </div>
     
     <div>
         <% gifs.forEach(gif => { %>
