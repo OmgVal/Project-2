@@ -2,12 +2,14 @@
 
     
 
-      <div>
-        <h1><i class="fa-solid fa-user"></i>@<%= user.username %></h1>
-        <a href="/users/edit">Edit Username</a>
-      </div>
+    <div class="row d-flex flex-row">
+        <h1><i class="fa-solid fa-user"></i> @<%= user.username %></h1>
+        <a href="/users/edit" class="text-muted">Edit Username<i class="fa-solid fa-pen"></i></a>
+    </div>
 
-    <h2> Welcome to your profile!! </h2>
+    <div class="container text-center text-white mb-5 border-bottom border-4 bg-dark rounded-top">
+        <h2> Liked Gifs: </h2>
+    </div>
     
     <!-- Add for each loop () -->
     
