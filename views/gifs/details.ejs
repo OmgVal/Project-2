@@ -1,51 +1,60 @@
+<div class="container justify-content-center">
 
-
-<div class="container">
-  <div>
-    <h1><%=  gif.title %></h1>
-      <a href="<%=  gif.url %>">source</a>
-  </div>
-  
-  
-  <img src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/>
-  
-  <div>
-      <form method="POST" action="/users/like">
-          <input hidden value="<%= gif.title %>" name="title" />
-          <input hidden value="<%= gif.id %>" name="giphyId" />
-          <button type="submit">like</button>
-      </form>
-      
-      <form method="POST" action="/users/like/?_method=DELETE" >
-          <input hidden value="<%= gif.title %>" name="title" />
-          <input hidden value="<%= gif.id %>" name="giphyId" />
-          <button type="submit">unlike</button>
-      </form>
-  </div>
-  
-  <div>
-    <% if(dbGif.comments){ %>
-        <% dbGif.comments.forEach(comment => { %>
-          <p> <%= comment.name %></p>
-          <p><%= comment.content %></p>
-        <% }) %>
-      <% } %>
-  </div>
-  
-  <form method="POST" action="/gifs/details/<%= gif.id %>">
-    <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Write your comment here:</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" name="content" required></textarea>
+  <div class="container">
+    <div>
+      <h1><%=  gif.title %></h1>
+        <a href="<%=  gif.url %>">source</a>
     </div>
+    
+    <div class="container">
+      <img src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/>
+      
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <form method="POST" action="/users/like">
+              <input hidden value="<%= gif.title %>" name="title" />
+              <input hidden value="<%= gif.id %>" name="giphyId" />
+              <button class="btn btn-secondary me-md-2" type="submit"><i class="fa-solid fa-heart"></i> Like</button>
+              
+          </form>
+          
+          <form method="POST" action="/users/like/?_method=DELETE" >
+              <input hidden value="<%= gif.title %>" name="title" />
+              <input hidden value="<%= gif.id %>" name="giphyId" />
+              <button class="btn btn-secondary" type="submit"><i class="fa-solid fa-heart-crack"></i> Unlike</button>
+              
+          </form>
+      </div>
+      
+      <div class="container">
 
-    <div class="mb-3">
-      <input hidden type="text" name="name">
-      <input type="submit">
+        <div>
+          <% if(dbGif.comments){ %>
+              <% dbGif.comments.forEach(comment => { %>
+                <p> <%= comment.name %></p>
+                <p><%= comment.content %></p>
+              <% }) %>
+            <% } %>
+        </div>
+        
+        <form method="POST" action="/gifs/details/<%= gif.id %>">
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Write your comment here:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" name="content" required></textarea>
+          </div>
+      
+          <div class="mb-3">
+            <input hidden type="text" name="name">
+            <input type="submit">
+          </div>
+        </form>
+      </div>
+      
     </div>
-      
-      
-  </form>
+          
+          
+    </div>
 </div>
+
 
 
 
