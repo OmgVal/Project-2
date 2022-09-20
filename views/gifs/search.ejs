@@ -9,7 +9,7 @@
     <input type="submit" />
   </form>
 
-<div>
+<div class="container-md grid text-center">
     <% gifs.forEach(gif => { %>
     <a href="/gifs/details/<%= gif.id %>">
             <% if (gif.images.original.url != " ") { %>

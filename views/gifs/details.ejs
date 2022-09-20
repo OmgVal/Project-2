@@ -23,22 +23,24 @@
           </form>
       </div>
       
-      <div class="container">
+      <div class="container mt-4">
 
-        <div class="container text-center">
-          <div class="row">
-            <div class="col">
-          <% if(dbGif.comments){ %>
+        <div class="container text-start align-content-center">
+          <div class="row border-bottom border-5">
+            <h5 class="grid gap-3 p-2 rounded text-bg-dark">Comments:</h5>
+            <% if(dbGif.comments){ %>
+              <div class="col border-bottom border-dark">
               <% dbGif.comments.forEach(comment => { %>
-                <p> <%= comment.name %></p>
-                <p><%= comment.content %></p>
-              <% }) %>
-            <% } %>
+                    <p class="fw-bold mb-n3"> <%= comment.name %></p>
+                    <p class=""><%= comment.content %></p>
+            </div>
+            <% }) %>
+          <% } %>
         </div>
         
         <form method="POST" action="/gifs/details/<%= gif.id %>">
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Write your comment here:</label>
+          <div class="mb-3 text-start mt-4">
+            <label for="exampleFormControlTextarea1" class="form-label fw-bold text-secondary">Write your comment here:</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" name="content" required></textarea>
           </div>
       
