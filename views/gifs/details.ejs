@@ -26,17 +26,24 @@
   <div>
     <% if(dbGif.comments){ %>
         <% dbGif.comments.forEach(comment => { %>
-          <p><%= comment.content %></p>
           <p> <%= comment.name %></p>
+          <p><%= comment.content %></p>
         <% }) %>
       <% } %>
   </div>
   
   <form method="POST" action="/gifs/details/<%= gif.id %>">
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Write your comment here:</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" type="text" name="content" required></textarea>
+    </div>
+
+    <div class="mb-3">
       <input hidden type="text" name="name">
-      <label for="content">Write your comment here:</label>
-      <input type="text" name="content" required>
       <input type="submit">
+    </div>
+      
+      
   </form>
 </div>
 
