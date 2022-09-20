@@ -21,19 +21,22 @@ router.get('/', (req, res) => {
 router.get('/details/:id', (req, res) => {
     console.log(req.params.id)
     axios.get(`https://api.giphy.com/v1/gifs/${req.params.id}?api_key=${process.env.API_KEY}`)
-      .then(response => {
-        res.render('gifs/details', { gif: response.data.data})
-        db.gif.findOrCreate({
-          where: { 
-              title: response.data.data.title,
-              giphyId: response.data.data.id
-           }
+    .then(response => {
+      db.gif.findOrCreate({
+        where: { 
+            title: response.data.data.title,
+            giphyId: response.data.data.id
+        },
+        include: [db.comment]
+        }).then(([dbGif]) => {
+          console.log(dbGif)
+          res.render('gifs/details', { gif: response.data.data, dbGif: dbGif})
+        })
       })
       .catch(console.log)
   })
-})
 
-router.post('/details/:id/comments', async (req, res) => {
+router.post('/details/:id', async (req, res) => {
   try {
     if(!res.locals.user) {
     res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
