@@ -7,7 +7,7 @@
     </div>
     
     <div class="container">
-      <img src="<%= gif.images.original.url %>" class="rounded mb-10" alt="<%= gif.title %>"/>
+      <img id="gifDisplay" src="<%= gif.images.original.url %>" class="rounded mb-10" alt="<%= gif.title %>"/>
       
       <div class="container d-grid gap-2 d-md-flex justify-content-md-end mt-10">
           <form method="POST" action="/users/like">
