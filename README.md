@@ -22,11 +22,13 @@ https://developers.giphy.com/explorer?
 | ------ | -------------- | -------------------------------- |
 | GET | `/` | home page that lists trending gifs |
 | GET | `/gifs/search` | list gifs with tag user searched|
-| POST | `/gifs/:id` | details of specific gif will allow user to post a comment |
-| POST | `/gifs/:id` | user can add gif to their faves in gif details|
-| GET | `/gifs/:id` | shows specific gifs details |
-| PUT | `/user/profile` | user will be able to update their username |
-| GET | `/user/profile` | shows list of all fave gifs for user |
+| GET | `/gifs/details/:id` | gif details for single gif|
+| POST | `/gifs/details/:id` | will allow user to post a comment to gif displayed |
+| POST | `/gifs/details/:id` | user can add gif to their likes in gif details|
+| GET | `/users/profile` | shows profile with list of all liked gifs for user |
+| POST | `/users/like` | stores like to currently signed in user|
+| GET | `/users/edit` | user will be able to update their username |
+| PUT | `/users/edit` | user will be able to update their username |
 | DELETE | `/gifs/:id` | allows user to undone thir favorites which will remove gif from their faves list |
 
 
