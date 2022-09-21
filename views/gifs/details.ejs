@@ -31,7 +31,7 @@
             <% if(dbGif.comments){ %>
               <div class="col border-bottom border-dark">
               <% dbGif.comments.forEach(comment => { %>
-                    <p class="fw-bold mb-n3"> <%= comment.name %></p>
+                    <p class="fw-bold mb-n3">@<%= comment.name %></p>
                     <p class=""><%= comment.content %></p>
             </div>
             <% }) %>
