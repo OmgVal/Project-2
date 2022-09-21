@@ -1,27 +1,26 @@
 <div class="container">
-
-    
-
     <div class="row d-flex flex-row">
         <h1><i class="fa-solid fa-user"></i> @<%= user.username %></h1>
         <a href="/users/edit" class="text-muted flex-fill">Edit Username<i class="fa-solid fa-pen"></i></a>
     </div>
 
-    <div class="container text-center text-white mb-5 mt-2 border-bottom border-4 bg-dark rounded-top">
-        <h2> Liked Gifs: </h2>
+    <div class="container-md">
+        <div class="text-center text-white mb-3 mt-2 border-bottom border-4 bg-dark rounded-top">
+            <h2> Liked Gifs: </h2>
+        </div>
+        <!-- Add for each loop () -->
+        
+        <div class="text-center border-4">
+            <% gifs.forEach(gif => { %>
+            <a href="/gifs/details/<%= gif.id %>">
+                    <% if (gif.images.original.url != " ") { %>
+                    <img id="gifImg" src="<%= gif.images.original.url %>" class="rounded float-start border border-4" width= auto height= auto alt="<%= gif.title %>"/> 
+                    <% } %>
+            </a>
+            <% }) %>
+        </div>
     </div>
     
-    <!-- Add for each loop () -->
-    
-    <div class="container-md text-center">
-        <% gifs.forEach(gif => { %>
-        <a href="/gifs/details/<%= gif.id %>">
-                <% if (gif.images.original.url != " ") { %>
-                <img id="gifImg" src="<%= gif.images.original.url %>" class="rounded float-start border border-4" width= auto height= auto alt="<%= gif.title %>"/> 
-                <% } %>
-        </a>
-        <% }) %>
-    </div>
 
 </div>
 
