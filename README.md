@@ -51,7 +51,7 @@ https://developers.giphy.com/explorer?
 - As a non-user i will NOT have the ability to leave any comments
 - As a non-user i will NOT have a profile
 - As a non-user i will be able create an account
-
+<br />
 - As a User i will have access to the gif library
 - As a User i will be able to view gif details/comments
 - As a User i will be able to like gifs
