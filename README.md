@@ -10,7 +10,8 @@ Now.. realistically you wouldnt make the sea to have "fun" but to pass time. You
 
 Cool right? Yeah...probably not but at least you'll be able to see a bunch of entertaining gifs. 👍🏻🤓
 
-## Deployment Link [project2deploy-omgvalicious.koyeb.app/]
+## Deployment Link 
+project2deploy-omgvalicious.koyeb.app/
 
 ## API:
 ![GIPHY](./imgs/api.png)
