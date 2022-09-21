@@ -1,4 +1,4 @@
-# Gif-tastic
+# GIF-tastic
 
 Picture this, if "we heart it" and "giphy" had a baby. A place where you could just go and like as many gifs as you wanted. A sea of gifs. YOUR sea of gifs. 
 
@@ -20,7 +20,7 @@ https://developers.giphy.com/explorer?
 ![ERDs](./imgs/ERDs.png)
 
 
-## RESTful routes
+## RESTful Routes
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
 | GET | `/` | home page that lists trending gifs |
