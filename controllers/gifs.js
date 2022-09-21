@@ -9,7 +9,7 @@ const axios = require('axios')
 //////////////////////////////////////////////////
 
 router.get('/', (req, res) => {
-    axios.get(`https://api.giphy.com/v1/gifs/search?api_key=${process.env.API_KEY}&q=${req.query.gifSearch}&limit=5&rating=g&lang=en`)
+    axios.get(`https://api.giphy.com/v1/gifs/search?api_key=${process.env.API_KEY}&q=${req.query.gifSearch}&limit=15&rating=g&lang=en`)
     .then(response => {
         // response.data.data.forEach(item => {console.log(item.images.original.url)})
         // console.log(response.data.data)

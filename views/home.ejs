@@ -4,27 +4,16 @@
     </div>
     
     
-    <div class="d-flex justify-content-center p-2">
-        <div class="row justify-content-center">
+    <div class="container">
+        <div class="text-center border-4">
             <% gifs.forEach(gif => { %>
-                <div class="col flex-wrap justify-content-center">
                     <a href="/gifs/details/<%= gif.id %>">
                         <% if (gif.images.original.url != " ") { %>
-                        <img id="gifImg" class="rounded d-block float-center border-5 border" src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/> 
+                        <img id="gifImg" class="rounded float-center border border-4" src="<%= gif.images.original.url %>" alt="<%= gif.title %>"/> 
                         <% } %>
                     </a>
-                </div>
             <% }) %>
         </div>   
-    </div>
-    <div class="text-center border-4">
-        <% gifs.forEach(gif => { %>
-        <a href="/gifs/details/<%= gif.id %>">
-                <% if (gif.images.original.url != " ") { %>
-                <img id="gifImg" src="<%= gif.images.original.url %>" class="rounded float-start border border-4" width= auto height= auto alt="<%= gif.title %>"/> 
-                <% } %>
-        </a>
-        <% }) %>
     </div>
 </div>
   

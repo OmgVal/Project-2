@@ -50,7 +50,7 @@ app.use(async (req, res, next) => {
 // })
 
 app.get('/', (req, res) => {
-    axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=${process.env.API_KEY}&limit=18&rating=g`)
+    axios.get(`https://api.giphy.com/v1/gifs/trending?api_key=${process.env.API_KEY}&limit=20&rating=g`)
     .then(response => {
         // response.data.data.forEach(item => {console.log(item.images.original.url)})
         res.render('home.ejs', { gifs: response.data.data })
