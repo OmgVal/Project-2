@@ -150,7 +150,11 @@ router.delete('/like', (req, res) => {
     if(!res.locals.user) {
         res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
         } else {
-            db.gif.findOne()
+            db.gif.findOne({
+                where: {
+                    giphyId: req.body.giphyId
+                }
+            })
             .then(gif => {
                 const likeDeleted = db.like.destroy({
                     where: {
