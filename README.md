@@ -14,7 +14,7 @@ Cool right? Yeah...probably not but at least you'll be able to see a bunch of en
 https://project2deploy-omgvalicious.koyeb.app/
 
 ## API:
-![GIPHY](./imgs/api.png)
+![GIPHY](./imgs/api.png) <br/>
 https://developers.giphy.com/explorer?
 
 ## ERDs:
