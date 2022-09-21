@@ -29,7 +29,7 @@ https://developers.giphy.com/explorer?
 | POST | `/users/like` | stores like to currently signed in user|
 | GET | `/users/edit` | edit username form |
 | PUT | `/users/edit` | user will be able to update their username |
-| DELETE | `/gifs/:id` | allows user to undone thir favorites which will remove gif from their faves list |
+| DELETE | `/like` | allows user to unlike a gif |
 
 
 
