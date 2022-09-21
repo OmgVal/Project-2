@@ -11,6 +11,7 @@ Now.. realistically you wouldnt make the sea to have "fun" but to pass time. You
 Cool right? Yeah...probably not but at least you'll be able to see a bunch of entertaining gifs. 👍🏻🤓
 
 ## API:
+![GIPHY](./imgs/api.png)
 https://developers.giphy.com/explorer?
 
 ## ERDs:
