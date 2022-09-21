@@ -1,19 +1,22 @@
 
 <div class="container mt-6">
-  <h3>Search for Gifs:</h3>
+  <div class="border-bottom border-4">
+    <h3 class="fw-bold">Search for Gifs:</h3>
+  
+    <form method="GET" action="/gifs/">
+        <lable for="search"></lable>
+        <input class="w-75 mb-3" type="text"  id="search" name="gifSearch" />
+      
+        <input type="submit" />
+      </form>
 
-  <form method="GET" action="/gifs/">
-      <lable for="search"></lable>
-      <input type="text"  id="search" name="gifSearch" />
-    
-      <input type="submit" />
-    </form>
+  </div>
 
-  <div class="container-md grid text-center">
+  <div class="container-md d-flex flex-wrap text-center mt-3 bg bg-dark rounded">
       <% gifs.forEach(gif => { %>
       <a href="/gifs/details/<%= gif.id %>">
               <% if (gif.images.original.url != " ") { %>
-              <img id="gifImg" src="<%= gif.images.original.url %>" class="rounded float-start" width= auto height= auto alt="<%= gif.title %>"/> 
+              <img id="gifImg" src="<%= gif.images.original.url %>" class="rounded float-start border border-dark border-5" width= auto height= auto alt="<%= gif.title %>"/> 
               <% } %>
       </a>
       <% }) %>
