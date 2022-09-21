@@ -27,7 +27,7 @@ https://developers.giphy.com/explorer?
 | POST | `/gifs/details/:id` | user can add gif to their likes in gif details|
 | GET | `/users/profile` | shows profile with list of all liked gifs for user |
 | POST | `/users/like` | stores like to currently signed in user|
-| GET | `/users/edit` | user will be able to update their username |
+| GET | `/users/edit` | edit username form |
 | PUT | `/users/edit` | user will be able to update their username |
 | DELETE | `/gifs/:id` | allows user to undone thir favorites which will remove gif from their faves list |
 
