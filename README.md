@@ -1,9 +1,9 @@
 
 ![giftasticImg](./imgs/giftastic.png)
 
-# GIF-tastic
+## Description
 
-Picture this, if "we heart it" and "giphy" had a baby. A place where you could just go and like as many gifs as you wanted. A sea of gifs. YOUR sea of gifs. 
+What is GIF-tastic? Picture this, if "we heart it" and "giphy" had a baby. A place where you could just go and like as many gifs as you wanted. A sea of gifs. YOUR sea of gifs. 
 
 ![DancingBeach](./imgs/dancingBeach.gif)
 
