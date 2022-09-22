@@ -17,6 +17,14 @@ https://project2deploy-omgvalicious.koyeb.app/
 ![GIPHY](./imgs/api.png) <br/>
 https://developers.giphy.com/explorer?
 
+##Installation
+
+
+```
+npm -install
+```
+
+
 ## ERDs:
 ![ERDs](./imgs/ERDs.png)
 
@@ -44,20 +52,20 @@ https://developers.giphy.com/explorer?
 ![User-Details](./imgs/Untitled_Artwork%2032.png)
 
 
-## UserStory
+## Non-User Story
 - As a non-user i will have access to gifs library
 - As a non-user i view gif details/comments
 - As a non-user i will NOT be able to "like" gifs
 - As a non-user i will NOT have the ability to leave any comments
 - As a non-user i will NOT have a profile
 - As a non-user i will be able create an account
-<br/>
+
+## User Story
 - As a User i will have access to the gif library
 - As a User i will be able to view gif details/comments
 - As a User i will be able to like gifs
 - As a User i will be able to leave a comment on gifs
 - As a User i will be able to login/view my profile
-
 
 ## MVP Goals
 1. Make homepage display gifs
@@ -70,3 +78,4 @@ https://developers.giphy.com/explorer?
 1. being able to categorize their faves 
 1. being able to upload their own gifs 
 1. user profile pic -- being gifs 
+
