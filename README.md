@@ -13,17 +13,46 @@ Cool right? Yeah...probably not but at least you'll be able to see a bunch of en
 ## Deployment Link 
 https://project2deploy-omgvalicious.koyeb.app/
 
-## API:
-![GIPHY](./imgs/api.png) <br/>
-https://developers.giphy.com/explorer?
 
-##Installation
+## Installation
 
+<!-- 
+Fork and clone this repository
+Run <npm install> to install dependencies
+Setup your database (this app already has two existing models)
+Run <createdb blogpulse_dev> to create the database
+Run <sequelize db:migrate> to run migrations
+Run <sequelize db:seed:all> to populate the database with 2 authors and 2 articles
+Use <npx nodemon> (or just <nodemon> if you installed it globally) to start your application
+ -->
 
+1. Fork and clone this repo then, using your terminal, intsall all dependencies : 
 ```
 npm -install
 ```
+1. In your terminal run: 
+```
+sequelize init
+```
+1. Now that you have initiallized sequelize (step 2) you can create the database(This project already has a database with exisiting models). Using your terminal run:
+```
+createdb express-auth-boilerplate
+``` 
+1. In terminal run migrations:
+```
+sequelize db:migrate
+```
+1. To populate your database run: 
+```
+sequelize db:seed:all 
+```
 
+
+### Project Information:
+
+## API:
+![GIPHY](./imgs/api.png) <br/>
+https://developers.giphy.com/explorer?
 
 ## ERDs:
 ![ERDs](./imgs/ERDs.png)
