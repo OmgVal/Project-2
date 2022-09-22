@@ -27,7 +27,7 @@ npm -install
 ```
 sequelize init
 ```
-1. Now that you have initiallized sequelize (step 2) you can create the database(this project already has a database with exisiting models name `express-auth-boilerplate`). Using your terminal run:
+1. Now that you have initiallized sequelize (step 2) you can create the database(this project already has a database with exisiting models named: `express-auth-boilerplate`). Using your terminal run:
 ```
 createdb express-auth-boilerplate
 ``` 
@@ -41,28 +41,34 @@ sequelize db:seed:all
 ```
 You are all set to add some data. To use the API follow these steps listed below.
 
-### Project Information:
 
 ## API:
-[![GIPHY](./imgs/api.png)](https://developers.giphy.com/explorer?)
+[![GIPHY](./imgs/api.png)](https://developers.giphy.com/)
 
+click image to go to Giphy site to get an API key. 
 
+### Using API key:
+
+- to user your api key you will need to `touch .env` file in your terminal.
+- In your env file your API Key in this format: `API_KEY=' '` paste your API inside of the single quotes
 
 
 ## Technologies Used: 
-- 
+
 - Sequelize
 - Node.js
 - Express
 - EJS
 - Bootstrap
-- Heroku (for deployment)
+- CSS
 
 ## ERDs:
+
 ![ERDs](./imgs/ERDs.png)
 
 
 ## RESTful Routes
+
 | Method | Path | Purpose |
 | ------ | -------------- | -------------------------------- |
 | GET | `/` | home page that lists trending gifs |
@@ -86,6 +92,7 @@ You are all set to add some data. To use the API follow these steps listed below
 
 
 ## Non-User Story
+
 - As a non-user i will have access to gifs library
 - As a non-user i view gif details/comments
 - As a non-user i will NOT be able to "like" gifs
@@ -94,6 +101,7 @@ You are all set to add some data. To use the API follow these steps listed below
 - As a non-user i will be able create an account
 
 ## User Story
+
 - As a User i will have access to the gif library
 - As a User i will be able to view gif details/comments
 - As a User i will be able to like gifs
@@ -101,6 +109,7 @@ You are all set to add some data. To use the API follow these steps listed below
 - As a User i will be able to login/view my profile
 
 ## MVP Goals
+
 1. Make homepage display gifs
 1. Have nav bar for user to access different routes
 1. Existing users may click on gif icons to access their details 
@@ -108,7 +117,10 @@ You are all set to add some data. To use the API follow these steps listed below
 1. users profile displays all their faves 
 
 ## Stretch Goals
+
 1. being able to categorize their faves 
 1. being able to upload their own gifs 
 1. user profile pic -- being gifs 
+
+### Sources
 
