@@ -44,8 +44,10 @@ You are all set to add some data. To use the API follow these steps listed below
 ### Project Information:
 
 ## API:
-![GIPHY](./imgs/api.png) <br/>
-https://developers.giphy.com/explorer?
+[![GIPHY](./imgs/api.png)](https://developers.giphy.com/explorer?)
+
+
+
 
 ## Technologies Used: 
 - 
@@ -53,7 +55,7 @@ https://developers.giphy.com/explorer?
 - Node.js
 - Express
 - EJS
-- Tailwind CSS (and Flowbite for layouts)
+- Bootstrap
 - Heroku (for deployment)
 
 ## ERDs:
