@@ -1,10 +1,13 @@
+
+![giftasticImg](./imgs/giftastic.png)
+
 # GIF-tastic
 
 Picture this, if "we heart it" and "giphy" had a baby. A place where you could just go and like as many gifs as you wanted. A sea of gifs. YOUR sea of gifs. 
 
 ![DancingBeach](./imgs/dancingBeach.gif)
 
-Now.. realistically you wouldnt make the sea to have "fun" but to pass time. You can favorite gifs and they will all be easily accessed via your profile.  
+Now.. realistically you wouldn't make the sea to have "fun" but to pass time. You can like gifs and they will all be easily accessed via your profile.  
 
 ![Dancingcat](https://media.giphy.com/media/gbmWwWm4sGMQvAYm1G/giphy.gif)
 
@@ -16,17 +19,7 @@ https://project2deploy-omgvalicious.koyeb.app/
 
 ## Installation
 
-<!-- 
-Fork and clone this repository
-Run <npm install> to install dependencies
-Setup your database (this app already has two existing models)
-Run <createdb blogpulse_dev> to create the database
-Run <sequelize db:migrate> to run migrations
-Run <sequelize db:seed:all> to populate the database with 2 authors and 2 articles
-Use <npx nodemon> (or just <nodemon> if you installed it globally) to start your application
- -->
-
-1. Fork and clone this repo then, using your terminal, intsall all dependencies : 
+1. Fork and clone this repo then, using your terminal, install all dependencies : 
 ```
 npm -install
 ```
@@ -34,25 +27,34 @@ npm -install
 ```
 sequelize init
 ```
-1. Now that you have initiallized sequelize (step 2) you can create the database(This project already has a database with exisiting models). Using your terminal run:
+1. Now that you have initiallized sequelize (step 2) you can create the database(this project already has a database with exisiting models name `express-auth-boilerplate`). Using your terminal run:
 ```
 createdb express-auth-boilerplate
 ``` 
-1. In terminal run migrations:
+1. In terminal run the migrations:
 ```
 sequelize db:migrate
 ```
-1. To populate your database run: 
+1. Then populate your database run: 
 ```
 sequelize db:seed:all 
 ```
-
+You are all set to add some data. To use the API follow these steps listed below.
 
 ### Project Information:
 
 ## API:
 ![GIPHY](./imgs/api.png) <br/>
 https://developers.giphy.com/explorer?
+
+## Technologies Used: 
+- 
+- Sequelize
+- Node.js
+- Express
+- EJS
+- Tailwind CSS (and Flowbite for layouts)
+- Heroku (for deployment)
 
 ## ERDs:
 ![ERDs](./imgs/ERDs.png)
