@@ -47,20 +47,19 @@ You are all set to add some data. To use the API follow these steps listed below
 
 click image to go to Giphy site to get an API key. 
 
-### Using API key:
+### Using API key⚠:
 
-- to user your api key you will need to `touch .env` file in your terminal.
+- To use your api key you will need to `touch .env` file in your terminal.
 - In your env file your API Key in this format: `API_KEY=' '` paste your API inside of the single quotes
 
 
 ## Technologies Used: 
 
-- Sequelize
-- Node.js
-- Express
-- EJS
-- Bootstrap
-- CSS
+- Sequelize - used for data in database and node.
+- Node.js - for server to use Javascript for building application
+- Express - webframe (RESTful Routes)
+- EJS - website template
+- Bootstrap - website styling(CSS Shortcuts)
 
 ## ERDs:
 
@@ -123,4 +122,4 @@ click image to go to Giphy site to get an API key.
 1. user profile pic -- being gifs 
 
 ### Sources
-
+![NavBar Tutorial](https://youtu.be/4sosXZsdy-s)
