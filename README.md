@@ -121,5 +121,13 @@ click image to go to Giphy site to get an API key.
 1. being able to upload their own gifs 
 1. user profile pic -- being gifs 
 
+# Post-Project Reflection:
+Since completing the project I believe I have started noticing the best way I work/learn. On my pervious project I recall being extremely anxious and trying to avoid coding until I belived I "grasped it" using youtube/lecture recordings. I was panicking so much that I kept myself from actually coding out of self-doubt. A few days prior to our presentation day, once I finally started coding, I found myself create lines of code off things I had memorized.
+
+
+
+For this reason, this time around I decided to avoid tutorials until I had ran through solutions myself. Actually using my brain power. I also made sure to ask for help when needed to avoid struggling by trying to "do it all myself". I believe by doing this it helped me to begin to memorize javascript syntax and feel more comfortable with it. Another hurdle I faced was learning bootstrap. I recall fighting myself because I kept trying to give up and return to using CSS directly because of how much I wanted to customize my layout and go all out. Eventually I decided the better move was going to be to try bootstrap regardless of how unfamilar I was with it. I gave up my website design in order to gain knowledge on a topic that I knew was gonna benefit me in the long run.  
+
 ### Sources
-![NavBar Tutorial](https://youtu.be/4sosXZsdy-s)
+[NavBar Tutorial](https://youtu.be/4sosXZsdy-s)
+
